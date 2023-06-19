@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="/styles/main.css"
+  />
+    <link
+    rel="stylesheet"
+    href="/styles/rock-paper-scissors.css"
+  />
+  
+  <link
+  rel="stylesheet"
+  href="/styles/todo-list.css"
+/>
+    <title>Calculator</title>
+<link rel="stylesheet" href="/styles/calculator.css">
+  </head>
+  <body>
+    <div class="top-container">    
+      <section>
+        <p style="font-size: 2rem">Calculator</p>
+        <p class="js-calculator-result" style="font-size: 2rem"></p>
+        <p>
+          <button
+            class="btn-1"
+            onclick="
+        
+        updateCalculation('1');
+        
+        "
+          >
+            1
+          </button class=>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('2');
+        
+        "
+          >
+            2
+          </button>
+          <button
+            class="btn-1"
+            onclick="
+    updateCalculation('3');
+      
+      "
+          >
+            3
+          </button>
+          <button
+            class="btn-2"
+            onclick="
+    
+    updateCalculation('+');
+    
+    "
+          >
+            +
+          </button>
+        </p>
+  
+        <p>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('4');
+    
+    "
+          >
+            4
+          </button>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('5');
+    
+    "
+          >
+            5
+          </button>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('6');
+    
+    "
+          >
+            6
+          </button>
+          <button
+            class="btn-2"
+            onclick="
+    
+    updateCalculation(' - ');
+    
+    "
+          >
+            -
+          </button>
+        </p>
+  
+        <p>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('7');
+    
+    "
+          >
+            7
+          </button>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('8');
+    
+    "
+          >
+            8
+          </button>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('9');
+    
+    "
+          >
+            9
+          </button>
+          <button
+            class="btn-2"
+            onclick="
+    
+    updateCalculation(' * ');
+    
+    "
+          >
+            *
+          </button>
+        </p>
+        <p>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('0');
+    
+    "
+          >
+            0
+          </button>
+          <button
+            class="btn-1"
+            onclick="
+    
+    updateCalculation('.');
+    
+    "
+          >
+            .
+          </button>
+          <button
+            class="btn-1"
+            onclick="
+    
+    calculation = eval(calculation);
+    document.querySelector('.js-calculator-result').innerHTML = eval(calculation);
+    
+    console.log(`${calculation}`);
+    
+    
+    "
+          >
+            =
+          </button>
+          <button
+            class="btn-2"
+            onclick="
+    updateCalculation(' / ');
+    "
+          >
+            /
+          </button>
+        </p>
+  
+        <button
+          class="btn-1 clear-button"
+          onclick="
+     
+    calculation ='';
+    updateCalculation('0')
+    console.log(`Cleared`);
+    
+    
+    "
+        >
+          Clear
+        </button>
+      </section>
+  
+    
+      <section>
+        <p class="title">Rock Paper Scissors</p>
+        <p>
+          To Play: Press "R" for Rock, "P" for Paper, "S" for Scissors.
+          <br />
+          Press "Backspace" to reset score. <br />"Spacebar" to Start and Stop
+          Autoplay.
+        </p>
+        <button class="move-button js-rock-button">
+          <img
+            class="move-icon"
+            src="/images/rock-emoji.png"
+          />
+        </button>
+        <button class="move-button js-paper-button">
+          <img
+            class="move-icon"
+            src="/images/paper-emoji.png"
+          />
+        </button>
+        <button class="move-button js-scissors-button">
+          <img
+            class="move-icon"
+            src="/images/scissors-emoji.png"
+            alt=""
+          />
+        </button>
+  
+        <p class="js-result result"></p>
+        <p class="js-moves moves"></p>
+        <p class="js-score score">Wins: 0 Losses: 0 Ties: 0</p>
+  
+        <button class="reset-score-button js-reset-score-button">
+          Reset Scores
+        </button>
+  
+        <button class="js-auto-play-button auto-play-button">Auto play</button>
+        <div class="js-reset-confirmation"></div>
+      </section></div>
+
+      <div class="bottom-container">   
+      
+        <section> <h1>Todo List</h1>
+          <div class="todo-input-grid">
+            <input
+              class="js-name-input name-input"
+              type="text"
+              placeholder="Todo Task"
+            />
+            <input type="date" class="js-due-date-input due-date-input" />
+            <button class="add-todo-button js-add-todo-button">Add</button>
+            <div class="js-todo-list todo-grid"></div>
+          </div>
+          </section></div>
+ 
+
+  
+  
+    </body>
+    <script src="/scripts/rock-paper-scissors.js"></script>
+    <script src="/scripts/todo-list.js"></script>
+    <script src="/scripts/calculator.js"></script>
+  </body>
+
+</html>
