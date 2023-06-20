@@ -1,283 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="JC Rodriguez Portfolio" />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/71j9k23/website-thumbnail.png"
+    />
+    <meta property="og:description" content="Jaicy Rodriguez Portfolio" />
+    <meta property="og:url" content="https://jcrodriguez.vercel.app/" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <title>JC Rodriguez Portfolio</title>
+
     <link
-    rel="stylesheet"
-    href="/styles/main.css"
-  />
-    <link
-    rel="stylesheet"
-    href="/styles/rock-paper-scissors.css"
-  />
-  
-  <link
-  rel="stylesheet"
-  href="/styles/todo-list.css"
-/>
-    <title>Calculator</title>
-<link rel="stylesheet" href="/styles/calculator.css">
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="/images/jyro-logo.png" />
   </head>
+
   <body>
-    <div class="top-container">    
-      <section>
-        <p style="font-size: 2rem">Calculator</p>
-        <p class="js-calculator-result" style="font-size: 2rem"></p>
-        <p>
-          <button
-            class="btn-1"
-            onclick="
-        
-        updateCalculation('1');
-        
-        "
-          >
-            1
-          </button class=>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('2');
-        
-        "
-          >
-            2
-          </button>
-          <button
-            class="btn-1"
-            onclick="
-    updateCalculation('3');
-      
-      "
-          >
-            3
-          </button>
-          <button
-            class="btn-2"
-            onclick="
-    
-    updateCalculation('+');
-    
-    "
-          >
-            +
-          </button>
-        </p>
-  
-        <p>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('4');
-    
-    "
-          >
-            4
-          </button>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('5');
-    
-    "
-          >
-            5
-          </button>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('6');
-    
-    "
-          >
-            6
-          </button>
-          <button
-            class="btn-2"
-            onclick="
-    
-    updateCalculation(' - ');
-    
-    "
-          >
-            -
-          </button>
-        </p>
-  
-        <p>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('7');
-    
-    "
-          >
-            7
-          </button>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('8');
-    
-    "
-          >
-            8
-          </button>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('9');
-    
-    "
-          >
-            9
-          </button>
-          <button
-            class="btn-2"
-            onclick="
-    
-    updateCalculation(' * ');
-    
-    "
-          >
-            *
-          </button>
-        </p>
-        <p>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('0');
-    
-    "
-          >
-            0
-          </button>
-          <button
-            class="btn-1"
-            onclick="
-    
-    updateCalculation('.');
-    
-    "
-          >
-            .
-          </button>
-          <button
-            class="btn-1"
-            onclick="
-    
-    calculation = eval(calculation);
-    document.querySelector('.js-calculator-result').innerHTML = eval(calculation);
-    
-    console.log(`${calculation}`);
-    
-    
-    "
-          >
-            =
-          </button>
-          <button
-            class="btn-2"
-            onclick="
-    updateCalculation(' / ');
-    "
-          >
-            /
-          </button>
-        </p>
-  
-        <button
-          class="btn-1 clear-button"
-          onclick="
-     
-    calculation ='';
-    updateCalculation('0')
-    console.log(`Cleared`);
-    
-    
-    "
-        >
-          Clear
-        </button>
-      </section>
-  
-    
-      <section>
-        <p class="title">Rock Paper Scissors</p>
-        <p class="instructions-text">
-          To Play: Press "R" for Rock, "P" for Paper, "S" for Scissors.
-          <br />
-          Press "Backspace" to reset score. <br />"Spacebar" to Start and Stop
-          Autoplay.
-        </p>
-        <button class="move-button js-rock-button">
-          <img
-            class="move-icon"
-            src="/images/rock-emoji.png"
-          />
-        </button>
-        <button class="move-button js-paper-button">
-          <img
-            class="move-icon"
-            src="/images/paper-emoji.png"
-          />
-        </button>
-        <button class="move-button js-scissors-button">
-          <img
-            class="move-icon"
-            src="/images/scissors-emoji.png"
-            alt=""
-          />
-        </button>
-  
-        <p class="js-result result"></p>
-        <p class="js-moves moves"></p>
-        <p class="js-score score">Wins: 0 Losses: 0 Ties: 0</p>
-  
-        <button class="reset-score-button js-reset-score-button">
-          Reset Scores
-        </button>
-  
-        <button class="js-auto-play-button auto-play-button">Auto play</button>
-        <div class="js-reset-confirmation"></div>
-      </section></div>
+    <div id="preloader"></div>
+    <header class="header">
+      <div class="left-section">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <a href="#" class="logo">JC Portfolio</a>
+      </div>
 
-      <div class="bottom-container">   
-        <h1>Todo List</h1>
-        <section class="todo-container"> 
-          <div class="todo-input-grid-top">
-            <input
-              class="js-name-input name-input"
-              type="text"
-              placeholder="Todo Task"
-            />
-            <input type="date" class="js-due-date-input due-date-input" />
-            <button class="add-todo-button js-add-todo-button">Add</button>
-          </div>
-          <h1>Task List:</h1>
-            <div class="js-todo-list todo-grid"></div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Service</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li>
+          <a class="display-mode-toggle"
+            ><img src="images/sun.png" id="icon"
+          /></a>
+        </li>
+      </ul>
+    </header>
 
-          </section>
-        
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hey! It's Me</h3>
+        <h1>JC Rodriguez</h1>
+        <h3>And I'm <span class="multiple-text"></span></h3>
+        <p>
+          Wanted to transform your Idea or Product digitally with the help of a
+          Professional Website? <br />
+          Hit me up! <br />
+          <span>Available for Freelance work!</span>
+        </p>
+        <div class="social-media">
+          <a href="https://www.facebook.com/jcyrdrgz/" target="_blank"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+          <!-- <a href="https://www.behance.net/jyrorodrigeb09" target="_blank"
+            ><i class="bx bxl-behance"></i
+          ></a>
+          <a href="https://www.instagram.com/jcyrodriguez" target="_blank"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a> -->
+          <a
+            href="https://www.linkedin.com/in/jaicy-rodriguez-06b132142/"
+            target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+          <a
+          href="https://github.com/jcyrdrgz?tab=repositories"
+          target="_blank"
+          ><i class='bx bxl-github'></i></i
+        ></a>
+
         </div>
- 
+        <a
+          href="https://drive.google.com/file/d/1sUo0L0welBGoQMmVRrEAw3akxevHU8s6/view?usp=sharing"
+          target="_blank"
+          class="btn"
+          >Download CV</a
+        >
+      </div>
+      <div class="home-img">
+        <img src="images/pattern3.png" alt="" class="main-img" />
+      </div>
+    </section>
 
-  
-  
-    </body>
-    <script src="/scripts/rock-paper-scissors.js"></script>
-    <script src="/scripts/todo-list.js"></script>
-    <script src="/scripts/calculator.js"></script>
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/AboutImagePattern-dark.png" alt="" />
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>JC - IT Expert / Front end Web Developer</h3>
+        <p>
+          I am Jaicy Rodriguez an IT Professional and Freelance Developer.
+          <br />
+          What stops us from achieving our goals is ourselves. Train your mind
+          to make anything possible and build opportunities. Your mind is
+          limitless, and the Internet is an endless library.
+        </p>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2 class="heading">Services</h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Web Development</h3>
+          <p>
+            Expert in building Website using HTML5, CSS, PHP and JavaScript for
+            Front end development.
+          </p>
+        </div>
+        <div class="services-box">
+          <i class="bx bx-game"></i>
+          <h3>Game Development</h3>
+          <p>Expert in building games using Unity 3D with C#.</p>
+        </div>
+        <div class="services-box">
+          <i class="bx bx-code-block"></i>
+          <h3>System / Application Development</h3>
+          <p>
+            Expert in building Computer Systems and Applications using VB.net.
+          </p>
+        </div>
+        <div class="services-box">
+          <i class="bx bx-data"></i>
+          <h3>Database Management</h3>
+          <p>
+            Expert in managing data through database applications such as
+            Microsoft SQL Server, My SQL, SQLite and Oracle SQL.
+          </p>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bx-user-voice"></i>
+          <h3>Certified Scrum Master and Trainer</h3>
+          <p>
+            Taken and Passed the ISO 9001 Trainer and Scrum Master Certification
+            .
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1Hi8EhTJ-z6OI8cftaPwQNghj-i3l413S/view?usp=sharing"
+            target="_blank"
+            class="btn"
+            >See Certification</a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="techstack">
+      <h2 class="heading"><span>Tech</span> Stack</h2>
+      <div class="techstack-container">
+        <div class="techstack-box">
+          <div class="tech-img-container">
+            <i class="bx bxl-html5"></i>
+          </div>
+          <h3>HTML</h3>
+          <div class="progress-container">
+            <progress value="95" max="100">75%</progress>
+          </div>
+        </div>
+        <div class="techstack-box">
+          <div class="tech-img-container">
+            <i class="bx bxl-css3"></i>
+          </div>
+          <h3>CSS</h3>
+          <div class="progress-container">
+            <progress value="95" max="100">75%</progress>
+          </div>
+        </div>
+        <div class="techstack-box">
+          <div class="tech-img-container">
+            <i class="bx bxl-javascript"></i>
+          </div>
+          <h3>JavaScript</h3>
+          <div class="progress-container">
+            <progress value="90" max="100">75%</progress>
+          </div>
+        </div>
+        <div class="techstack-box">
+          <div class="tech-img-container">
+            <i class="bx bxl-react"></i>
+          </div>
+          <h3>React</h3>
+          <div class="progress-container">
+            <progress value="50" max="100">75%</progress>
+          </div>
+        </div>
+        <div class="techstack-box">
+          <div class="tech-img-container">
+            <i class="bx bxs-data"></i>
+          </div>
+          <h3>SQL</h3>
+          <div class="progress-container">
+            <progress value="80" max="100">75%</progress>
+          </div>
+        </div>
+        <div class="techstack-box">
+          <div class="tech-img-container">
+            <i class="bx bxl-c-plus-plus"></i>
+          </div>
+          <h3>C / C#</h3>
+          <div class="progress-container">
+            <progress value="80" max="100">75%</progress>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="experience">
+      <h2 class="heading"><span>Experience</span></h2>
+      <div class="timeline">
+        <div class="timeline__component">
+          <div class="timeline__date timeline__date--right">2017</div>
+        </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+        </div>
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">
+            <span>Technical Support</span> for <span>Microsoft</span>
+          </h2>
+          <p class="timeline__paragraph">
+            2 years of Technical Support for Microsoft Services and Equipments.
+          </p>
+        </div>
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">
+            <span>IT Helpdesk Technician</span> for <span>NBA</span>
+          </h2>
+          <p class="timeline__paragraph">
+            2 years of IT Technician experience with Active Directory, Service
+            Now, Windows Software and Hardware, Onboarding and Offboarding,
+            Telecom.
+          </p>
+        </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+        </div>
+        <div class="timeline__component">
+          <div class="timeline__date">2019</div>
+        </div>
+        <div class="timeline__component">
+          <div class="timeline__date timeline__date--right">2020</div>
+        </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+        </div>
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">
+            <span>Project Manager / AI Developer</span>
+          </h2>
+          <p class="timeline__paragraph">
+            3 years of Project Management and Software Engineer experience with
+            an AI Live Agent Web Application
+          </p>
+        </div>
+        <div
+          class="timeline__component timeline__component--bottom timeline__component--bg"
+        >
+          <h2 class="timeline__title"><span>ServiceNow Developer</span></h2>
+          <p class="timeline__paragraph">
+            Currently an Administrator/Developer for ServiceNow
+          </p>
+        </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+          <div class="timeline__point timeline__point--bottom"></div>
+        </div>
+        <div class="timeline__component timeline__component--bottom">
+          <div class="timeline__date">2023</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Project</span></h2>
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="images/portfolio1.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Youtube Clone</h4>
+            <p>
+              Created a Youtube Clone to showcase my skills building a
+              responsive website.
+            </p>
+            <a
+              href="https://jc-rodriguez-youtube-clone.vercel.app/"
+              target="_blank"
+            >
+              <i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio2.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Personal Portfolio</h4>
+            <p>
+              Created my own Personal Portfolio using HTML , CSS , Javascript
+              with Animations
+            </p>
+            <a href="#" target=""> <i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio3.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Client Portfolio</h4>
+            <p>
+              Created a Portfolio based from a Figma template still using HTMl,
+              CSS and Javascript
+            </p>
+            <a href="https://cheriper.vercel.app/" target="_blank">
+              <i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio5.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Amazon Clone</h4>
+            <p>
+              Created Amazon Commerce Website Clone in enhancing my skills with
+              JavaScript and Objects.
+            </p>
+            <a href="https://amazclone.vercel.app/" target="_blank">
+              <i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio6.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Javascript / DOM Project</h4>
+            <p>
+              Created Projects in manipulating DOM, localstorage and in-depth
+              Javascript solutions.
+            </p>
+            <a
+              href="https://dom-projects-jyro.vercel.app/"
+              target="_blank"
+            >
+              <i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="contact-message">
+        Let's start the journey building your own Website!
+      </p>
+      <h2 class="heading">
+        <a href="mailto:jcyrdrgz@gmail.com"> <span>Contact Me!</span></a>
+      </h2>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>&copy; 2023 by Jaicy Rodriguez</p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bxs-arrow-to-top"></i></a>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/script.js"></script>
   </body>
-
 </html>
